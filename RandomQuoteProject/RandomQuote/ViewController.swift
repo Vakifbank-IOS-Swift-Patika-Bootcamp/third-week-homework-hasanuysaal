@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     private func getQuotes(){
         Client.getRandomQuote { quotes, error in
             guard let firstQuote = quotes else { return }
-            self.quoteLabel.text = firstQuote[0].en
+            self.quoteLabel.text = firstQuote.en
         }
     }
 

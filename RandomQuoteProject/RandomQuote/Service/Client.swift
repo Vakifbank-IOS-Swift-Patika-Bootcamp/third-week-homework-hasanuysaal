@@ -49,8 +49,8 @@ class Client {
         return task
     }
     
-    class func getRandomQuote(completion: @escaping ([RandomQuoteModel]?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.randomQuotes.url, responsetType: [RandomQuoteModel].self) { response, error in
+    class func getRandomQuote(completion: @escaping (RandomQuoteModel?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.randomQuotes.url, responsetType: RandomQuoteModel.self) { response, error in
             if let response = response {
                 completion(response, nil)
             } else {
